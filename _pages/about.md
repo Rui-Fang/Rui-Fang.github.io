@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "WIP"
+title: "Personal Page"
 author_profile: true
 redirect_from: 
   - /about/
