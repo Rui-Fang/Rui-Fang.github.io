@@ -150,9 +150,9 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               : google-analytics-4 # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          : # Add your Google Analytics 4 measurement ID here (e.g., G-XXXXXXXXXX)
+    tracking_id          : G-M4LYQ1HS1G # Add your Google Analytics 4 measurement ID here (e.g., G-XXXXXXXXXX)
 
 
 # Reading Files
