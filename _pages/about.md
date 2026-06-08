@@ -1,29 +1,47 @@
 ---
 permalink: /
-title: "Personal Page"
+title: "Rui Fang"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-I am a Ph.D. candidate at the National Taiwan University (NTU) in the Graduate Institute of Communication Engineering, under the supervision of Prof. Ming-Syan Chen. My research is centered on **efficient deep learning for Transformers**, with broader interests spanning few-shot learning and interpretable machine learning. I am committed to developing scalable and efficient AI models that address real-world problems while maintaining model interpretability.
+<div class="profile-hero">
+  <p class="profile-kicker">Efficient deep learning, from model compression to trustworthy deployment.</p>
+  <h1>Rui Fang</h1>
+  <p>I am a Ph.D. candidate in the Graduate Institute of Communication Engineering at National Taiwan University, advised by Prof. Ming-Syan Chen. My research focuses on making Transformer-based systems faster, smaller, and more deployable without losing the behavior that makes them useful.</p>
+</div>
 
-## Research Highlights
+## Research Interests
 
-**Efficient Inference for Transformers (2024–Present)**
+<div class="focus-grid">
+  <div class="focus-card">
+    <h3>Efficient Transformer Inference</h3>
+    <p>Early exiting, KV admission, long-context inference, and adaptive computation for practical latency and memory reduction.</p>
+  </div>
+  <div class="focus-card">
+    <h3>Compression and Quantization</h3>
+    <p>Quantization, pruning, and task-aware model compression for Vision Transformers and recursive language models.</p>
+  </div>
+  <div class="focus-card">
+    <h3>Trustworthy Deployment</h3>
+    <p>Multi-task unlearning, TEE-aware on-device language models, and methods that preserve reliability under deployment constraints.</p>
+  </div>
+</div>
 
-My recent work focuses on enabling scalable, low-latency inference without sacrificing performance:
-- "BiLEE: Bi-Level Early Exiting for Generative Document Retrieval" (ECAI 2024) introduces a bi-level early exiting strategy that significantly accelerates document retrieval without accuracy loss
-- "LoGIC: Multi-LoRA Guided Importance Consensus for Multi-Task Pruning in Vision Transformers" (AAAI 2026) proposes a novel pruning framework that leverages LoRA for efficient multi-task learning
-- "Learning What to Write: Write-Gated KV for Efficient Long-Context Inference" (arXiv 2025) addresses KV-cache compression for long-context inference in LLMs
+## Recent Work
 
-**Few-Shot Learning under Distribution Shifts (2023–2024)**
+- **LoopQ** studies post-training quantization for recursive Transformers and introduces loop-aware adaptations for stable low-bit inference.
+- **Amortized-Precision Quantization** formulates precision allocation for early-exit Vision Transformers under dynamic inference paths.
+- **KV Admission** learns what to write into the KV cache for efficient long-context inference.
+- **LoGIC** uses Multi-LoRA guided importance consensus for multi-task pruning in Vision Transformers.
+- **BiLEE** introduces bi-level early exiting for generative document retrieval.
 
-I collaborated on "Dual Alignment Framework for Few-shot Learning with Inter-Set and Intra-Set Shifts" (NeurIPS 2025), which tackles the dual domain adaptation challenge in few-shot learning scenarios through optimal transport-based feature calibration.
+## Publications
 
-**Interpretable ECG Diagnosis (2019–2021)**
+My complete publication list is maintained on the [Publications](/publications/) page and mirrored with my [Google Scholar profile](https://scholar.google.com/citations?user=If-6koYAAAAJ).
 
-My early work on "A Visually Interpretable Detection Method Combines 3-D ECG with a Multi-VGG Neural Network for Myocardial Infarction Identification" (Computer Methods and Programs in Biomedicine 2022) demonstrated the importance of interpretability in medical AI applications, combining 3D electrocardiogram data with deep learning for explainable myocardial infarction detection.
+## Contact
 
-I am dedicated to advancing the field of AI through research that is both technically sound and practically applicable, with the ultimate goal of creating innovations that serve societal needs.
+I am interested in efficient AI systems, model compression, long-context inference, and deployable machine learning. The fastest way to reach me is by email at [rfang@arbor.ee.ntu.edu.tw](mailto:rfang@arbor.ee.ntu.edu.tw).

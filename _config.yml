@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Rui Fang"
 title_separator          : "-"
 name                     : &name "Rui Fang"
-description              : &description "Ph.D. candidate in Communication Engineering at NTU. Research focuses on efficient deep learning."
+description              : &description "Ph.D. candidate at National Taiwan University working on efficient deep learning, Transformer inference, quantization, pruning, and trustworthy deployment."
 url                      : https://rui-fang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Rui-Fang/Rui-Fang.github.io"
@@ -21,10 +21,10 @@ repository               : "Rui-Fang/Rui-Fang.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.svg"
   name             : "Rui Fang"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. Student@GICE, NTU"
+  bio              : "Ph.D. Candidate, GICE, NTU"
   location         : "Taipei"
   employer         : "National Taiwan University"
   uri              : "https://rui-fang.github.io"
@@ -75,12 +75,12 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
+  preprints:
+    title: 'Preprints'
   conferences:
     title: 'Conference Papers'
+  manuscripts:
+    title: 'Journal Articles'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"

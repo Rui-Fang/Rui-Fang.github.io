@@ -13,46 +13,49 @@ Education
 ======
 * Ph.D. in Communication Engineering, National Taiwan University, 2021 - Present
   * Network Database Laboratory
-  * Supervisor: Ming-Syan Chen
+  * Supervisor: Prof. Ming-Syan Chen
 
 * M.S. in Manufacturing Technology, National Taipei University of Technology, 2018 - 2021
   * Advanced Microsystems and Device Laboratory
-  * Supervisor: Chih-Cheng Lu
+  * Supervisor: Prof. Chih-Cheng Lu
 
 * B.S. in Mechanical Engineering, National Taipei University of Technology, 2014 - 2018
 
 Research Interests
 ======
-* Efficient Deep Learning for Transformers (2024–Present)
-  * Dynamic LLM inference (BiLEE, ECAI 2024)
-  * Pruning Vision Transformers with LoRA-guided importance consensus (LoGIC, AAAI 2026)
-  * KV-cache compression for long-context inference
+* Efficient Transformer inference
+  * Early exiting, KV admission, and long-context inference
+  * Adaptive computation for generative retrieval and language models
 
-* Few-Shot Learning under Distribution Shifts (2023–2024)
-  * Dual alignment and optimal transport-based feature calibration for robust few-shot adaptation (DuAL, NeurIPS 2025)
+* Model compression and quantization
+  * Quantization for recursive Transformers and early-exit Vision Transformers
+  * LoRA-guided pruning and multi-task compression
 
-* Interpretable ECG Diagnosis (2019–2021)
-  * Interpretable 3-D ECG deep models for myocardial infarction detection (CMPB 2022)
-  
+* Trustworthy and deployable machine learning
+  * Multi-task unlearning
+  * Secure on-device language models with trusted execution environments
+  * Interpretable medical AI with 3-D ECG representations
+
 Skills
 ======
-* Deep Learning & Neural Networks
-  * Vision Transformers (ViT)
-  * Large Language Models (LLMs)
+* Deep Learning
+  * Vision Transformers
+  * Large Language Models
   * Graph Neural Networks
-  * Convolutional Neural Networks (CNNs)
+  * Convolutional Neural Networks
 
 * Model Optimization
-  * Network Pruning
-  * Knowledge Distillation
+  * Network pruning
   * Quantization
-  * LoRA and Parameter Efficient Fine-tuning
+  * Early exiting
+  * LoRA and parameter-efficient fine-tuning
 
-* Signal Processing
-  * ECG Analysis
-  * Biomedical Signal Processing
+* Systems and Deployment
+  * On-device inference
+  * Trusted execution environments
+  * CUDA and GPU programming
 
-* Programming Languages
+* Programming
   * Python, C++, CUDA
   * PyTorch, TensorFlow, JAX
 
