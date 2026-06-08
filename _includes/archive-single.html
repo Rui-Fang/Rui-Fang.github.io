@@ -38,24 +38,24 @@
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
-        {% if post.collection == 'teaching' %}
-          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == 'publications' %}
+        {% if post.collection == 'publications' %}
+          {% if post.authors %}
+            <p class="publication__authors">{{ post.authors }}</p>
+          {% endif %}
           <p class="publication__venue"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif post.collection == 'teaching' %}
+          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
+    {% if post.collection != 'publications' and post.excerpt and site.read_more != 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
+    {% elsif post.collection != 'publications' and post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
     
     {% if post.collection == 'publications' %}
-      {% if post.citation %}
-        <p class="publication__citation">{{ post.citation }}</p>
-      {% endif %}
       {% if post.paperurl or post.codeurl or post.projecturl %}
         <div class="publication__links">
           {% if post.paperurl %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}

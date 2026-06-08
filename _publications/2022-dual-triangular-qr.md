@@ -2,6 +2,7 @@
 title: "Dual-Triangular QR Decomposition with Global Acceleration and Partially Q-Rotation Skipping"
 collection: publications
 category: conferences
+authors: "<b>Rui Fang</b>, Siyang Jiang, Hsi-Wen Chen, Wei Ding, and Ming-Syan Chen"
 permalink: /publication/2022-dual-triangular-qr/
 excerpt: "Presents an optimized QR decomposition method with global acceleration and partial Q-rotation skipping."
 date: 2022-12-01

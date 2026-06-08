@@ -2,6 +2,7 @@
 title: "BiLEE: Bi-Level Early Exiting for Generative Document Retrieval"
 collection: publications
 category: conferences
+authors: "<b>Rui Fang</b>, Chin-Yuan Yeh, Hsi-Wen Chen, and Ming-Syan Chen"
 permalink: /publication/2024-bilee/
 excerpt: "Introduces bi-level early exiting for faster generative document retrieval."
 date: 2024-10-01

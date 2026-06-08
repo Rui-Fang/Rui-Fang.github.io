@@ -2,6 +2,7 @@
 title: "Amortized-Precision Quantization for Early-Exit Vision Transformers"
 collection: publications
 category: preprints
+authors: "<b>Rui Fang</b>, Hsi-Wen Chen, and Ming-Syan Chen"
 permalink: /publication/2026-amortized-precision-quantization/
 excerpt: "Studies quantization under adaptive early-exit computation paths in Vision Transformers."
 date: 2026-05-01

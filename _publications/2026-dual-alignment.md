@@ -2,6 +2,7 @@
 title: "Dual Alignment Framework for Few-shot Learning with Inter-Set and Intra-Set Shifts"
 collection: publications
 category: conferences
+authors: "Siyang Jiang, <b>Rui Fang</b>, Hsi-Wen Chen, Wei Ding, Guoliang Xing, and Ming-Syan Chen"
 permalink: /publication/2026-dual-alignment/
 excerpt: "Addresses few-shot learning under both inter-set and intra-set distribution shifts."
 date: 2026-01-01

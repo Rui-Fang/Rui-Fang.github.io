@@ -2,6 +2,7 @@
 title: "LoopQ: Quantization for Recursive Transformers"
 collection: publications
 category: preprints
+authors: "<b>Rui Fang</b>, Hsi-Wen Chen, and Ming-Syan Chen"
 permalink: /publication/2026-loopq/
 excerpt: "Introduces quantization techniques for recursive Transformers."
 date: 2026-05-01

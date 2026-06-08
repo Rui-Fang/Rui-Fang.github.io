@@ -2,6 +2,7 @@
 title: "LoGIC: Multi-LoRA Guided Importance Consensus for Multi-Task Pruning in Vision Transformers"
 collection: publications
 category: conferences
+authors: "Yu-Hong Chou, <b>Rui Fang</b>, Hsi-Wen Chen, and Ming-Syan Chen"
 permalink: /publication/2026-logic/
 excerpt: "Proposes Multi-LoRA guided importance consensus for multi-task pruning in Vision Transformers."
 date: 2026-04-01

@@ -2,6 +2,7 @@
 title: "KV Admission: Learning What to Write for Efficient Long-Context Inference"
 collection: publications
 category: preprints
+authors: "Yen-Chieh Huang, Pi-Cheng Hsiu, <b>Rui Fang</b>, and Ming-Syan Chen"
 permalink: /publication/2025-kv-admission/
 excerpt: "Learns what to admit into the KV cache to improve long-context inference efficiency."
 date: 2025-12-01
