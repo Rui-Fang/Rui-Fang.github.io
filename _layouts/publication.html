@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article class="publication-detail">
+  <a class="back-link" href="{{ '/publications/' | relative_url }}">← All publications</a>
+  <header class="page-heading">
+    <div class="paper-meta"><span>{{ page.venue }}</span>{% include paper-status.html paper=page %}</div>
+    <h1>{{ page.title }}</h1>
+    <p class="detail-authors">{{ page.authors }}</p>
+    {% if page.equal_contribution %}<p class="author-note">* Equal contribution (co-first authors).</p>{% endif %}
+    <div class="paper-links">
+      {% if page.paperurl %}<a class="button" href="{{ page.paperurl }}">Read paper</a>{% endif %}
+      {% if page.codeurl %}<a class="button button-secondary" href="{{ page.codeurl }}">Source code</a>{% endif %}
+    </div>
+  </header>
+  <section class="detail-section"><h2>Overview</h2><p>{{ page.excerpt | strip_html }}</p>{{ content }}</section>
+  {% if page.citation %}<section class="detail-section citation"><h2>Citation</h2><p>{{ page.citation }}</p></section>{% endif %}
+</article>

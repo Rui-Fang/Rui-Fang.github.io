@@ -1,31 +1,26 @@
----
-layout: compress
----
-
-{% include base_path %}
-
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
-
-  <body>
-
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
-
-    {% include scripts.html %}
-
-  </body>
+<html lang="{{ site.locale | default: 'en' | slice: 0, 2 }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include seo.html %}
+  <link rel="icon" href="{{ '/images/monogram.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/academic.css' | relative_url }}">
+  {% if page.math %}<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>{% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% unless page.layout == 'home' %}
+  <header class="site-header wrap">
+    <a class="wordmark" href="{{ '/' | relative_url }}">Rui Fang</a>
+    {% include primary-nav.html %}
+  </header>
+  {% endunless %}
+  <main id="main" class="wrap" tabindex="-1">{{ content }}</main>
+  <footer class="site-footer wrap">
+    <span>© {{ site.time | date: '%Y' }} {{ site.name }}</span>
+    <span>Updated {{ site.last_updated }} · <a href="{{ '/sitemap/' | relative_url }}">Sitemap</a></span>
+  </footer>
+  {% if jekyll.environment == 'production' %}{% include analytics.html %}{% endif %}
+</body>
 </html>

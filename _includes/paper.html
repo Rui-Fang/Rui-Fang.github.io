@@ -1,0 +1,11 @@
+{% assign publication_year = post.year | append: "" %}
+<article class="paper">
+  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  <p class="paper-authors">{{ post.authors }}</p>
+  {% if post.equal_contribution %}<p class="author-note">* Equal contribution (co-first authors).</p>{% endif %}
+  <p class="paper-meta"><i>{{ post.venue }}</i>{% unless post.venue contains publication_year or post.status == 'under-review' %}, {{ post.year }}{% endunless %}{% if post.status != 'published' %}. {% include paper-status.html paper=post %}{% endif %}</p>
+  <div class="paper-links">
+    {% if post.paperurl %}<a href="{{ post.paperurl }}">[Paper]<span class="sr-only">: {{ post.title }}</span></a>{% endif %}
+    {% if post.codeurl %}<a href="{{ post.codeurl }}">[Code]<span class="sr-only">: {{ post.title }}</span></a>{% endif %}
+  </div>
+</article>

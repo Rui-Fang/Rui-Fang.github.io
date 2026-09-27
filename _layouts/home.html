@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<header class="site-header profile-heading">
+  <h1 id="about-heading">{{ site.name }}</h1>
+  {% include primary-nav.html %}
+</header>
+{{ content }}
+<section class="home-section" aria-labelledby="selected-heading">
+  <div class="section-heading"><h2 id="selected-heading">Selected publications</h2><a href="{{ '/publications/' | relative_url }}">Full list</a></div>
+  {% assign selected = site.publications | where_exp: 'paper', 'paper.selected' | sort: 'selected' %}
+  <div class="paper-list">{% for post in selected %}{% include paper.html %}{% endfor %}</div>
+</section>

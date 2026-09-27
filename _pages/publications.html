@@ -1,62 +1,19 @@
 ---
-layout: archive
-title: "Publications"
+layout: page
+title: Publications
 permalink: /publications/
-author_profile: true
+description: Papers on efficient learning, model compression, and trustworthy deployment.
 ---
-
-{% include base_path %}
-
-<div class="publication-shell">
-  <main class="publication-main">
-    {% if site.author.googlescholar %}
-      <p class="publication-intro">A complete list of my research works. You can also find these records on my <a href="{{site.author.googlescholar}}">Google Scholar profile</a>.</p>
-    {% endif %}
-
-    {% if site.publication_category %}
-      {% for category in site.publication_category %}
-        {% assign category_posts = site.publications | where: "category", category[0] | reverse %}
-        {% if category_posts.size > 0 %}
-          <section class="publication-section" id="{{ category[0] }}">
-            <div class="publication-section__header">
-              <h2>{{ category[1].title }}</h2>
-              <span>{{ category_posts.size }} {% if category_posts.size == 1 %}work{% else %}works{% endif %}</span>
-            </div>
-            <div class="publication-section__list">
-              {% for post in category_posts %}
-                {% include archive-single.html %}
-              {% endfor %}
-            </div>
-          </section>
-        {% endif %}
-      {% endfor %}
-    {% else %}
-      <section class="publication-section">
-        <div class="publication-section__list">
-          {% for post in site.publications reversed %}
-            {% include archive-single.html %}
-          {% endfor %}
-        </div>
-      </section>
-    {% endif %}
-  </main>
-
-  {% if site.publication_category %}
-    <aside class="publication-toc" aria-label="Publication sections">
-      <div class="publication-toc__inner">
-        <h2>Sections</h2>
-        <nav>
-          {% for category in site.publication_category %}
-            {% assign category_posts = site.publications | where: "category", category[0] %}
-            {% if category_posts.size > 0 %}
-              <a href="#{{ category[0] }}">
-                <span>{{ category[1].title }}</span>
-                <small>{{ category_posts.size }}</small>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </nav>
-      </div>
-    </aside>
-  {% endif %}
+<div class="publication-toolbar">
+  <p>See also my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
+  <nav aria-label="Publication sections">{% for section in site.data.publication_sections %}{% assign papers = site.publications | where: 'category', section.key %}{% if papers.size > 0 %}<a href="#{{ section.key }}">{{ section.title }}</a>{% endif %}{% endfor %}</nav>
 </div>
+{% for section in site.data.publication_sections %}
+  {% assign papers = site.publications | where: 'category', section.key | sort: 'date' | sort: 'year' | reverse %}
+  {% if papers.size > 0 %}
+    <section class="publication-section" id="{{ section.key }}" aria-labelledby="heading-{{ section.key }}">
+      <div class="section-heading"><h2 id="heading-{{ section.key }}">{{ section.title }}</h2></div>
+      <div class="paper-list">{% for post in papers %}{% include paper.html %}{% endfor %}</div>
+    </section>
+  {% endif %}
+{% endfor %}

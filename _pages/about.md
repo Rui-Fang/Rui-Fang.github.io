@@ -1,47 +1,25 @@
 ---
+layout: home
 permalink: /
-title: "Rui Fang"
-author_profile: true
+title: Rui Fang
+description: Ph.D. candidate at National Taiwan University researching efficient Transformer inference, quantization, and model compression.
 redirect_from:
   - /about/
   - /about.html
 ---
-
-<div class="profile-hero">
-  <p class="profile-kicker">Efficient deep learning, from model compression to trustworthy deployment.</p>
-  <h1>Rui Fang</h1>
-  <p>I am a Ph.D. candidate in the Graduate Institute of Communication Engineering at National Taiwan University, advised by Prof. Ming-Syan Chen. My research focuses on making Transformer-based systems faster, smaller, and more deployable without losing the behavior that makes them useful.</p>
-</div>
-
-## Research Interests
-
-<div class="focus-grid">
-  <div class="focus-card">
-    <h3>Efficient Transformer Inference</h3>
-    <p>Early exiting, KV admission, long-context inference, and adaptive computation for practical latency and memory reduction.</p>
+<section class="about" aria-labelledby="about-heading">
+  <header class="about-identity">
+    <p class="affiliation"><span class="academic-role">Ph.D. Candidate</span><br>Graduate Institute of<br class="desktop-break"> Communication Engineering<br>National Taiwan University</p>
+    <div class="profile-links">
+      <a href="{{ site.author.googlescholar }}">{% include icons/scholar.svg %}<span>Google Scholar</span></a>
+      <a href="https://github.com/{{ site.author.github }}">{% include icons/github.svg %}<span>GitHub</span></a>
+      <a href="{{ site.author.orcid }}">{% include icons/orcid.svg %}<span>ORCID</span></a>
+      <a href="{{ '/cv/' | relative_url }}">{% include icons/cv.svg %}<span>CV</span></a>
+    </div>
+  </header>
+  <div class="about-bio">
+    <p>I am a Ph.D. candidate at National Taiwan University, advised by Prof. Ming-Syan Chen in the Network Database Laboratory. Before joining NTU, I received my M.S. and B.S. degrees from National Taipei University of Technology.</p>
+    <p>My research focuses on efficient inference and model compression for Transformers, including early exiting, quantization, pruning, and KV-cache management. I also work on multi-task learning and unlearning.</p>
+    <p class="email"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
   </div>
-  <div class="focus-card">
-    <h3>Compression and Quantization</h3>
-    <p>Quantization, pruning, and task-aware model compression for Vision Transformers and recursive language models.</p>
-  </div>
-  <div class="focus-card">
-    <h3>Trustworthy Deployment</h3>
-    <p>Multi-task unlearning, TEE-aware on-device language models, and methods that preserve reliability under deployment constraints.</p>
-  </div>
-</div>
-
-## Recent Work
-
-- **LoopQ** studies post-training quantization for recursive Transformers and introduces loop-aware adaptations for stable low-bit inference.
-- **Amortized-Precision Quantization** formulates precision allocation for early-exit Vision Transformers under dynamic inference paths.
-- **KV Admission** learns what to write into the KV cache for efficient long-context inference.
-- **LoGIC** uses Multi-LoRA guided importance consensus for multi-task pruning in Vision Transformers.
-- **BiLEE** introduces bi-level early exiting for generative document retrieval.
-
-## Publications
-
-My complete publication list is maintained on the [Publications](/publications/) page and mirrored with my [Google Scholar profile](https://scholar.google.com/citations?user=If-6koYAAAAJ).
-
-## Contact
-
-I am interested in efficient AI systems, model compression, long-context inference, and deployable machine learning. The fastest way to reach me is by email at [rfang@arbor.ee.ntu.edu.tw](mailto:rfang@arbor.ee.ntu.edu.tw).
+</section>

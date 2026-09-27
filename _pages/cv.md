@@ -1,13 +1,14 @@
 ---
-layout: archive
+layout: page
 title: "CV"
 permalink: /cv/
-author_profile: true
+description: Education, research, and academic service.
+pdf_updated: '2026-09-28'
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+<div class="cv-download"><a class="button" href="{{ '/files/CV.pdf' | relative_url }}">Download PDF CV</a><span>PDF updated {{ page.pdf_updated }}.</span></div>
 
 <section class="cv-section">
   <h2>Education</h2>
@@ -45,7 +46,7 @@ redirect_from:
   <h2>Research Interests</h2>
   <ul class="cv-simple-list">
     <li><strong>Efficient Transformer inference:</strong> early exiting, KV admission, long-context inference, and adaptive computation for generative retrieval and language models.</li>
-    <li><strong>Model compression and quantization:</strong> quantization for recursive Transformers and early-exit Vision Transformers, LoRA-guided pruning, and multi-task compression.</li>
+    <li><strong>Model compression and quantization:</strong> quantization for looped language models and early-exit Vision Transformers, LoRA-guided pruning, and multi-task compression.</li>
     <li><strong>Trustworthy deployment:</strong> multi-task unlearning, secure on-device language models with trusted execution environments, and interpretable medical AI.</li>
   </ul>
 </section>
@@ -74,11 +75,10 @@ redirect_from:
 
 <section class="cv-section">
   <h2>Publications</h2>
-  <ul class="cv-publications">
-    {% for post in site.publications reversed %}
-      {% include archive-single-cv.html %}
-    {% endfor %}
-  </ul>
+  <div class="paper-list">
+    {% assign papers = site.publications | sort: 'date' | reverse %}
+    {% for post in papers %}{% include paper.html compact=true %}{% endfor %}
+  </div>
 </section>
 
 <section class="cv-section">

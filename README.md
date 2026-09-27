@@ -1,75 +1,61 @@
-# Academic Pages
-**Academic Pages is a Github Pages template for academic websites.**
+# Rui Fang — academic website
 
-# Getting Started
+A lightweight Jekyll website for research, publications, and CV, deployed with GitHub Pages. The active template is maintained in this repository: compact academic layout, white background, blue links, and no JavaScript dependency for navigation. Original Academic Pages / Minimal Mistakes files and their MIT attribution are retained, but unused demo content and legacy assets are excluded from the build.
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+## Preview and verify
 
-See more info at https://academicpages.github.io/
+Use Ruby 3.2.2 and Bundler 2.3.5 (also used by CI and Docker):
 
-## Running locally
-
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-Start by build the container:
-
-```bash
-docker build -t jekyll-site .
+```sh
+gem install bundler -v 2.3.5
+bundle install
+bundle exec jekyll serve --host 127.0.0.1
 ```
 
-Next, run the container:
-```bash
-docker run -p 4000:4000 --rm -v $(pwd):/usr/src/app jekyll-site
+Open http://127.0.0.1:4000. Restart Jekyll after changing `_config.yml`.
+
+```sh
+JEKYLL_ENV=production bundle exec jekyll build
+python3 scripts/check_site.py _site
 ```
 
-# Maintenance
+The checks validate internal links and fragments, metadata, sitemap XML, demo exclusions, and the currently maintained publication records. External publisher availability is checked separately when updating papers. `Gemfile.lock` is tracked; do not delete it to resolve build failures. Update dependencies intentionally with Bundler.
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+Alternatively:
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+```sh
+docker build -t rui-academic .
+docker run --rm -p 4000:4000 -v "$PWD:/usr/src/app" rui-academic
+```
 
-## Bugfixes and enhancements
+## Update content
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+- `_pages/about.md`: introduction and research focus.
+- `_publications/*.md`: the single data source for publications, selected work, and web CV.
+- `_pages/cv.md`: education, awards, skills, and service.
+- `_data/publication_sections.yml`: publication grouping and order.
+- `_data/navigation.yml`: main navigation.
+- `_includes/primary-nav.html`: shared navigation; the homepage combines its only name heading with navigation.
+- `_includes/icons/*.svg`: four small inline outlines extracted from the original Academicons and Font Awesome fonts. Icons are decorative alongside visible link text; no icon font download is needed.
+- `assets/css/academic.css`: active responsive template, print styles, and color variables.
+- `_layouts/{default,home,page,publication}.html` and `_includes/paper*.html`: active layouts and shared paper rendering.
+- `_config.yml`: contact details, content update date, build exclusions, and analytics.
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+Each paper needs `title`, `authors`, `date`, `year`, `category`, `status`, `venue`, `excerpt`, and a unique **local** `permalink`. Put external URLs in `paperurl` or `codeurl`; omit unavailable links. `year` is the displayed publication year; `date` preserves the original record date. Keep existing permalinks when renaming a paper. `selected: 1` (or 2, 3, ...) controls homepage selection and order. For shared first authorship, mark the relevant names with `<sup>*</sup>` and set `equal_contribution: true`; the listing and detail templates display the explanation.
 
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+Categories: `conferences`, `manuscripts`, `submissions`, `preprints`.
+Statuses: `published`, `accepted`, `under-review`, `preprint`. Accepted papers must not be labeled published, and submissions must not be labeled accepted. Add `citation` for a formatted citation on the detail page. No proceedings DOI or page numbers should be invented for accepted manuscripts.
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+`files/CV.pdf` is the current downloadable CV (updated September 28, 2026). Its LaTeX source is maintained separately in [CV_Latex](https://github.com/Rui-Fang/CV_Latex), in `rui_fang_cv.tex`. After compiling a new version, copy `rui_fang_cv.pdf` to `files/CV.pdf` and update `pdf_updated` in `_pages/cv.md`. LaTeX sources and build artifacts are kept out of this website repository. All current paper records are reflected automatically in the web CV.
+
+Set `math: true` on a page only if it needs MathJax. Analytics runs only with `JEKYLL_ENV=production`. The site works without JavaScript.
+
+## Publishing
+
+The check workflow builds and validates pushes and pull requests; it does not change deployment settings. Keep the repository's existing GitHub Pages deployment. Verify the actual deployment settings before switching to an Actions deployment workflow.
+
+## Sources and maintenance
+
+See `docs/publication-audit.md` for the September 2026 Scholar reconciliation. When adding a paper, update the expected publication count and any status expectations in `scripts/check_site.py`. Template assets use local system fonts and preserve existing publication URLs.
+
+Original template: [Academic Pages](https://github.com/academicpages/academicpages.github.io), derived from [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes). See `LICENSE` for retained attribution.

@@ -1,7 +1,7 @@
 {
   "name": "academic-pages",
   "version": "0.8.1.1",
-  "description": "Academic Pages Mistakes Jekyll theme npm build scripts",
+  "description": "Optional legacy Academic Pages JavaScript build tools (not used by the active template)",
   "repository": {
     "type": "git",
     "url": "https://github.com/academicpages/academicpages.github.io"
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/academicpages/academicpages.github.io",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">=22"
   },
   "dependencies": {
     "fitvids": "^2.1.1",
@@ -37,5 +37,6 @@
     "uglify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/fitvids/dist/fitvids.min.js node_modules/magnific-popup/dist/jquery.magnific-popup.min.js node_modules/jquery-smooth-scroll/jquery.smooth-scroll.min.js assets/js/plugins/jquery.greedy-navigation.js assets/js/_main.js -c -m -o assets/js/main.min.js",
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
     "build:js": "npm run uglify"
-  }
+  },
+  "private": true
 }
