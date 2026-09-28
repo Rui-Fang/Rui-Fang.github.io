@@ -12,3 +12,9 @@ citation: '<b>Rui Fang</b>, Chin-Yuan Yeh, Hsi-Wen Chen, and Ming-Syan Chen. (20
 status: published
 year: 2024
 ---
+
+Generative document retrieval identifies relevant documents by generating their identifier tokens. These identifiers encode a hierarchy, so an incorrect early token can send retrieval into the wrong branch. Meanwhile, beam search spends computation on candidate sequences that may already be unlikely to lead to useful documents. Applying a uniform early-exit rule therefore overlooks both the varying difficulty of token positions and the uneven value of search candidates.
+
+BiLEE combines early exiting at two levels. Layer Level Early Exiting allows token prediction to stop at an intermediate Transformer layer when confidence exceeds a calibrated threshold. Its thresholds account for the hierarchical structure of document identifiers and differences between token positions. Token Level Early Exiting terminates unpromising candidate sequences, reducing the number of beams that continue through decoding. The two mechanisms control how deeply each token is processed and how much search effort each candidate receives.
+
+The experiments show that these complementary decisions can double retrieval inference speed and reduce FLOPs by a factor of 13 while preserving comparable retrieval accuracy. The study examines acceleration in the document-retrieval setting, where maintaining the quality of complete identifiers is essential.

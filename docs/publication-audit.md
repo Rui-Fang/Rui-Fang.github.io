@@ -22,3 +22,19 @@ The web CV uses the same collection as the publications list. The downloadable P
 ## Authorship correction
 
 The user confirmed that Yu-Hong Chou and Rui Fang are co-first authors of LoGIC. Both names carry an asterisk; the shared listing and detail templates explain equal contribution, including on the web CV.
+
+## Expanded paper overviews
+
+All 12 detail pages now contain three paragraphs covering the research problem, method, and evaluation. Short front-matter excerpts remain available for metadata; the detail template renders the body without repeating the excerpt. Existing publication status and authorship are preserved.
+
+Sources checked for the expanded text:
+
+- 3-D ECG, Dual-Triangular QR, BiLEE, and LoGIC: the manuscripts already in `files/2021-CMPB.pdf`, `files/2022-ICFPT.pdf`, `files/2024-ECAI.pdf`, and `files/2026-AAAI-LoGIC.pdf`.
+- KV Admission: [arXiv v4](https://arxiv.org/abs/2512.17452v4), including admission before cache writes and the global/local cache design.
+- APQ: [author abstract](https://arxiv.org/abs/2605.07317), including utilization-aware precision, MAQEE, and the reported BOP reduction.
+- Dual Alignment: [official NeurIPS proceedings](https://proceedings.nips.cc/paper_files/paper/2025/hash/5dc387343572bb95f264e05b66e83951-Abstract-Conference.html).
+- HSMLog: [author abstract](https://arxiv.org/abs/2608.29773). The overview explicitly retains the experimental condition that industrial background logs were augmented with constructed anomaly scenarios.
+- Multi-Task Unlearning: [manuscript](https://arxiv.org/html/2605.19042v1). Percentage improvements refer to Unlearning Impact Score (UIS).
+- Mask as Memory: [Springer chapter](https://link.springer.com/chapter/10.1007/978-3-032-37667-1_23), including the PruneStream components and the five-task evaluation.
+- SEAL: the author's [NTU thesis abstract](https://tdr.lib.ntu.edu.tw/handle/123456789/98825?mode=full) supports the framework description. No thesis-only numerical result is presented as a conference-paper result. [Crossref's publisher-deposited record](https://api.crossref.org/works/10.1109/EdgeCom66327.2025.00030) confirms the paper's DOI and title; the previous DOI, `10.1109/EDGE67615.2025.00026`, returned 404 and was corrected.
+- LOOPQ: the user-supplied `41948_LoopQ_Quantization_for_L.pdf` (ICLR 2027 submission). The overview reflects loop-aware scaling, selective transformations, transition adapters, and trajectory-aware calibration. The 67.8% result is an average **relative** improvement over the strongest static baseline for each comparison, not a percentage-point gain. The supplied PDF is not added to the public site, and the arXiv link remains pending.

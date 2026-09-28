@@ -13,6 +13,10 @@ layout: default
       {% if page.codeurl %}<a class="button button-secondary" href="{{ page.codeurl }}">Source code</a>{% endif %}
     </div>
   </header>
-  <section class="detail-section"><h2>Overview</h2><p>{{ page.excerpt | strip_html }}</p>{{ content }}</section>
+  <section class="detail-section">
+    <h2>Overview</h2>
+    {% assign overview = content | strip %}
+    {% if overview != empty %}{{ content }}{% else %}<p>{{ page.excerpt | strip_html }}</p>{% endif %}
+  </section>
   {% if page.citation %}<section class="detail-section citation"><h2>Citation</h2><p>{{ page.citation }}</p></section>{% endif %}
 </article>
